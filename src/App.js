@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import TodoListRootContainer from './todoListRootContainer';
+import { Provider } from 'react-redux';
+import store from './store';
 
-export default class App extends Component {
+const App = React.createClass({
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <Provider store={store}>
+        <TodoListRootContainer />
+      </Provider>
     );
   }
-}
+})
+
+export default App;
